@@ -24,7 +24,7 @@ export function Scene(props) {
   return (
     <group {...props} dispose={null} ref={modelRef}>
       <group scale={0.01}>
-        <group scale={100}>
+        <group scale={90}>
           <mesh
             castShadow
             receiveShadow

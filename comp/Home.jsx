@@ -1,6 +1,6 @@
 import { useLoader } from '@react-three/fiber';
 import { Canvas } from '@react-three/fiber';
-import { Scene } from '../public/model/iphone/Scene';
+import { Scene } from './Scene';
 import Model from './Model';
 import { Suspense } from 'react';
 import {
@@ -12,9 +12,9 @@ import {
 const Home = () => {
   return (
     <>
-      <div className="flex w-screen h-screen justify-center items-center">
-        <div className="flex flex-col gap-6 text-left justify-center items-start w-1/3">
-          <h1 className="text-7xl font-bold w-full text-cyan-800">
+      <div className="flex overflow-x-hidden w-screen lg:flex-row flex-col-reverse h-[120vh] lg:h-screen justify-center items-center">
+        <div className="flex flex-col gap-6 text-left justify-center items-start lg:w-2/3 w-full p-4 lg:pl-20">
+          <h1 className="lg:text-7xl text-4xl font-bold w-full text-cyan-800">
             Threejs demo
           </h1>
           <p className="text-lg  font-medium opacity-60">
@@ -27,13 +27,14 @@ const Home = () => {
           </button>
         </div>
         <Canvas
-          style={{ width: '40vw' }}
+          // style={{ width: '40vw' }}
+          className=" w-1/3 "
           camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 1] }}
           shadows={true}
           colormanagement="true"
           shadowmap
         >
-          <ambientLight intensity={0.1} />
+          <ambientLight intensity={1} />
 
           <pointLight position={[0, 10, 10]} intensity={1} />
           <Suspense fallback={null}>
@@ -46,7 +47,7 @@ const Home = () => {
               // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
               // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
             >
-              <Scene />
+              <Scene className=" scale-75" />
             </Float>
             <ContactShadows
               opacity={1}
