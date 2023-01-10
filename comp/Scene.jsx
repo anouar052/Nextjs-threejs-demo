@@ -9,7 +9,7 @@ Title: Apple iPhone 13 Pro Max
 
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
-import { useFrame } from 'react-three-fiber';
+import { useFrame } from '@react-three/fiber';
 
 export function Scene(props) {
   const { nodes, materials } = useGLTF('/model/iphone/scene.gltf');
