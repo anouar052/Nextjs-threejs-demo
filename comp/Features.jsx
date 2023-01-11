@@ -38,7 +38,7 @@ const Features = () => {
         <Canvas
           // style={{ width: '40vw' }}
           className=" w-1/3  flex"
-          camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 0.5] }}
+          camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 0.55] }}
           shadows={true}
         >
           <ambientLight intensity={1} />
@@ -48,14 +48,14 @@ const Features = () => {
             {/* <Scene className=" scale-50" x={2} y={2} z={2} /> */}
             <ScrollControls pages={2}>
               {/* <Scroll> */}
-              <Scene propx={0} propy={0} propz={-0.1} direction="right" />
+              <Scene propx={0.05} propy={0} propz={-0.1} direction="left" />
 
               <Scene
-                propx={-0.1}
+                propx={-0.05}
                 propy={0}
                 propz={0.1}
                 turned
-                direction="left"
+                direction="right"
               />
               {/* </Scroll> */}
             </ScrollControls>

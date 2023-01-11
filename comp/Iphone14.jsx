@@ -15,20 +15,23 @@ export function Scene(props) {
   const [y, setY] = useState(propy);
   const [z, setZ] = useState(propz);
   const phoneref = useRef();
+
   useEffect(() => {
     if (!turned) {
       return;
     }
-    console.log(data);
+    phoneref.current.rotation.y = 3.15;
   }, []);
 
   useFrame(() => {
-    direction === 'left'
-      ? ((phoneref.current.position.x = data.offset / 2 + propx),
-        (phoneref.current.rotation.y = data.offset * 10 + 3.15))
-      : ((phoneref.current.position.x = -data.offset / 2 - propx),
-        (phoneref.current.rotation.y = -data.offset * 10));
-    //   );
+    const translate = data.range(1 / 3, 1 / 3);
+    if (translate < 0.9) {
+      direction === 'right'
+        ? ((phoneref.current.position.x = -data.offset / 2 + propx),
+          (phoneref.current.rotation.y = -data.offset * 10 + 3.15))
+        : ((phoneref.current.position.x = data.offset / 2 + propx),
+          (phoneref.current.rotation.y = data.offset * 10));
+    }
   });
 
   return (
