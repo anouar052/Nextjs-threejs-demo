@@ -1,6 +1,6 @@
 import { useLoader } from '@react-three/fiber';
 import { Canvas } from '@react-three/fiber';
-import { Scene } from './Scene';
+import { Scene } from './Iphone13';
 import Model from './Model';
 import { Suspense } from 'react';
 import {
@@ -9,11 +9,12 @@ import {
   Float,
   ContactShadows,
 } from '@react-three/drei';
+import Features from './Features.jsx';
 const Home = () => {
   return (
     <>
       <div className="flex overflow-x-hidden w-screen lg:flex-row flex-col-reverse h-[120vh] lg:h-screen justify-center items-center">
-        <div className="flex flex-col gap-6 text-left justify-center items-start lg:w-2/3 w-full p-4 lg:pl-20">
+        <div className="flex flex-col gap-6 text-left justify-center items-start  w-full p-4 lg:pl-20 lg:mr-10">
           <h1 className="lg:text-7xl text-4xl font-bold w-full text-cyan-800">
             Threejs demo
           </h1>
@@ -28,7 +29,7 @@ const Home = () => {
         </div>
         <Canvas
           // style={{ width: '40vw' }}
-          className=" w-1/3 "
+          className=" w-1/4 "
           camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 1] }}
           shadows={true}
         >
@@ -61,6 +62,7 @@ const Home = () => {
           </Suspense>
         </Canvas>
       </div>
+      <Features />
     </>
   );
 };
