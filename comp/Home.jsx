@@ -30,7 +30,7 @@ const Home = () => {
         <Canvas
           // style={{ width: '40vw' }}
           className=" w-1/4 "
-          camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 1] }}
+          camera={{ fov: 90, near: 0.1, far: 1000, position: [0, 0, 1] }}
           shadows={true}
         >
           <ambientLight intensity={1} />
