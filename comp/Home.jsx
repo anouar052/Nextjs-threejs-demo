@@ -12,10 +12,10 @@ import {
 import Features from './Features.jsx';
 const Home = () => {
   return (
-    <>
-      <div className="flex overflow-x-hidden w-screen lg:flex-row flex-col-reverse h-[120vh] lg:h-screen justify-center items-center">
+    <div className=" snap-y snap-mandatory h-screen  overflow-y-scroll overflow-x-hidden">
+      <div className="flex snap-center overflow-x-hidden w-screen lg:flex-row flex-col-reverse h-full justify-center items-center">
         <div className="flex flex-col gap-6 text-left justify-center items-start  w-full p-4 lg:pl-20 lg:mr-10">
-          <h1 className="lg:text-7xl text-4xl font-bold w-full text-cyan-800">
+          <h1 className="lg:text-7xl text-4xl font-bold w-full  text-cyan-700">
             Threejs demo
           </h1>
           <p className="text-lg  font-medium opacity-60">
@@ -23,7 +23,7 @@ const Home = () => {
             labore, aperiam quo placeat cumque unde voluptates ducimus veniam
             atque in.
           </p>
-          <button className="bg-cyan-700 text-white font-semibold px-4 py-2 rounded-lg">
+          <button className="bg-cyan-900 text-white font-semibold px-4 py-2 rounded-lg">
             learn more
           </button>
         </div>
@@ -63,7 +63,7 @@ const Home = () => {
         </Canvas>
       </div>
       <Features />
-    </>
+    </div>
   );
 };
 

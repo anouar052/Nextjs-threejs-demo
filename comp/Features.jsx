@@ -30,7 +30,7 @@ const Features = () => {
   };
 
   return (
-    <div id="wrapper" className="h-screen  bg-red-200 w-screen">
+    <div id="wrapper" className="h-full  snap-center bg-red-200 w-screen">
       <div
         id="iphoneScene"
         className="h-screen w-screen justify-center items-center sticky top-0 bg-black"
