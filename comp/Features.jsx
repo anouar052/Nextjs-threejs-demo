@@ -95,7 +95,7 @@ const Features = () => {
         </div>
         <h3
           id="featureText"
-          className="absolute font-bold text-center  text-5xl text-white top-[60%] right-[35%] z-10   leading-normal"
+          className="absolute font-bold text-center  text-xl lg:text-5xl text-white top-[60%] right-[35%] z-10   leading-normal"
         >
           Two sizes same speed
         </h3>
