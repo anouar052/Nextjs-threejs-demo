@@ -4,5 +4,14 @@
 
 body {
   overflow-x: hidden;
-  background-color: white;
+  background-color: black;
+  padding-bottom: 100vh;
+}
+
+.no-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scroll {
+  scrollbar-width: none;
 }

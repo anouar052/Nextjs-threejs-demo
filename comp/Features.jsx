@@ -25,43 +25,62 @@ const Features = () => {
     }
     iphoneSmall.current.rotation.y = 3.15;
   }, []);
-  const handleScroll = () => {
-    setBigX(window.scrollY);
-  };
+
+  //animation
+
+  useEffect(() => {
+    gsap.fromTo(
+      '#featureText',
+      { scale: 0, opacity: 0 },
+      {
+        opacity: 1,
+        scale: 2,
+        y: 300,
+        scrollTrigger: {
+          trigger: '#wrapper',
+          start: 'top bottom 30%',
+          end: 'top center',
+          scrub: true,
+          // markers: true,
+        },
+      }
+    );
+  }, []);
 
   return (
-    <div id="wrapper" className="h-full  snap-center bg-red-200 w-screen">
-      <div
-        id="iphoneScene"
-        className="h-screen w-screen justify-center items-center sticky top-0 bg-black"
-      >
-        <Canvas
-          // style={{ width: '40vw' }}
-          className=" w-1/3  flex"
-          camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 0.55] }}
-          shadows={true}
+    <>
+      <div id="wrapper" className="h-full  snap-center  w-screen  ">
+        <div
+          id="iphoneScene"
+          className="h-screen w-screen justify-center relative items-center top-0 bg-black"
         >
-          <ambientLight intensity={1} />
+          <Canvas
+            // style={{ width: '40vw' }}
+            className=" w-1/3  flex"
+            camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 0.55] }}
+            shadows={true}
+          >
+            <ambientLight intensity={1} />
 
-          <pointLight position={[0, 10, 10]} intensity={1} />
-          <Suspense fallback={null}>
-            {/* <Scene className=" scale-50" x={2} y={2} z={2} /> */}
-            <ScrollControls pages={2}>
-              {/* <Scroll> */}
-              <Scene propx={0.05} propy={0} propz={-0.1} direction="left" />
+            <pointLight position={[0, 10, 10]} intensity={1} />
+            <Suspense fallback={null}>
+              {/* <Scene className=" scale-50" x={2} y={2} z={2} /> */}
+              <ScrollControls pages={1}>
+                {/* <Scroll> */}
+                <Scene propx={0.07} propy={0} propz={-0.1} direction="left" />
 
-              <Scene
-                propx={-0.05}
-                propy={0}
-                propz={0.1}
-                turned
-                direction="right"
-              />
-              {/* </Scroll> */}
-            </ScrollControls>
+                <Scene
+                  propx={-0.03}
+                  propy={0}
+                  propz={0.1}
+                  turned
+                  direction="right"
+                />
+                {/* </Scroll> */}
+              </ScrollControls>
 
-            {/* <OrbitControls /> */}
-            {/* <ContactShadows
+              {/* <OrbitControls /> */}
+              {/* <ContactShadows
             opacity={1}
             scale={10}
             blur={0.8}
@@ -70,11 +89,18 @@ const Features = () => {
             color="#000000"
             radius={4}
         /> */}
-            {/* <Environment preset="forest" blur={0.3} background /> */}
-          </Suspense>
-        </Canvas>
+              {/* <Environment preset="forest" blur={0.3} background /> */}
+            </Suspense>
+          </Canvas>
+        </div>
+        <h3
+          id="featureText"
+          className="absolute font-bold text-center  text-5xl text-white top-[60%] right-[35%] z-10   leading-normal"
+        >
+          Two sizes same speed
+        </h3>
       </div>
-    </div>
+    </>
   );
 };
 

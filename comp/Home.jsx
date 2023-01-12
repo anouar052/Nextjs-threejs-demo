@@ -12,7 +12,7 @@ import {
 import Features from './Features.jsx';
 const Home = () => {
   return (
-    <div className=" snap-y snap-mandatory h-screen  overflow-y-scroll overflow-x-hidden">
+    <div className=" snap-y snap-mandatory h-screen bg-white scrollbar-hide  overflow-y-scroll overflow-x-hidden">
       <div className="flex snap-center overflow-x-hidden w-screen lg:flex-row flex-col-reverse h-full justify-center items-center">
         <div className="flex flex-col gap-6 text-left justify-center items-start  w-full p-4 lg:pl-20 lg:mr-10">
           <h1 className="lg:text-7xl text-4xl font-bold w-full  text-cyan-700">

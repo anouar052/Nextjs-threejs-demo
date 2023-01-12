@@ -25,13 +25,14 @@ export function Scene(props) {
 
   useFrame(() => {
     const translate = data.range(1 / 3, 1 / 3);
-    if (translate < 0.9) {
+    if (translate < 0.85) {
       direction === 'right'
         ? ((phoneref.current.position.x = -data.offset / 2 + propx),
           (phoneref.current.rotation.y = -data.offset * 10 + 3.15))
         : ((phoneref.current.position.x = data.offset / 2 + propx),
           (phoneref.current.rotation.y = data.offset * 10));
     }
+    return;
   });
 
   return (
